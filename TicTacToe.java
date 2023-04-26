@@ -21,7 +21,7 @@ public class TicTacToe {
         while(true) {
             System.out.println("Enter your placement (1-9):");
             int playerPos = scan.nextInt();
-            while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions)){
+            while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)){
                 System.out.println("The position is taken, please choose another one.");
                 playerPos = scan.nextInt();
             }
@@ -135,9 +135,11 @@ public class TicTacToe {
                 return "Congratulations you won!";
             } else if(cpuPositions.containsAll(l)) {
                 return "CPU wins! Sorry :(";
-            } else if(playerPositions.size() + cpuPositions.size() == 9){
-                return "It's a tie!";
             }
+        }
+
+        if(playerPositions.size() + cpuPositions.size() == 9){
+            return "It's a tie!";
         }
 
         return "";
